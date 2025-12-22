@@ -3,8 +3,11 @@ concurrency:
   group: build-${{ github.ref }}
   cancel-in-progress: true
 on:
-  schedule:
-    - cron: "0 7 1/21 * *" # We default to rebuilding every 21 days, change this to your liking
+  #schedule:
+  #  - cron: "0 7 1/21 * *" # We default to rebuilding every 21 days, change this to your liking
+  push:
+    branches:
+      - main
   workflow_dispatch: {}
 
 jobs:
@@ -27,9 +30,9 @@ jobs:
       - name: Preparing Container
         uses: pkgforge-dev/anylinux-setup-action@8872fabe63f9a00b35e25b2f46da62a05afc9a7d # v1
       - name: Install Dependencies
-        run: /bin/sh ./get-dependencies.sh
+        run: /bin/bash ./get-dependencies.sh
       - name: Make AppImage
-        run: /bin/sh ./make-appimage.sh
+        run: /bin/bash ./make-appimage.sh
       - name: Upload artifact
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
