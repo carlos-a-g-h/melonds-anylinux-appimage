@@ -23,7 +23,7 @@ export OUTPATH=./dist
 
 export DEPLOY_SDL=1
 export DEPLOY_OPENGL=1
-export DEPLOY_GEGL=1
+export DEPLOY_GEGL=0
 export DEPLOY_VULKAN=0
 export DEPLOY_QT=1
 export DEPLOY_PULSE=1
