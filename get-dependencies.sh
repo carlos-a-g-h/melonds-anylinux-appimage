@@ -13,7 +13,7 @@ echo "
 "
 
 apt update
-apt install -yy git wget zsync patchelf xvfb unzip binutils build-essential
+apt install -yy git wget strace zsync patchelf xvfb unzip binutils build-essential
 
 wget "$URL_SHARUN"
 chmod +x quick-sharun.sh
