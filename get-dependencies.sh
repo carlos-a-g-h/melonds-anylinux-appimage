@@ -4,7 +4,8 @@ set -eu
 
 ARCH=$(uname -m)
 VERSION="$(cat version|head -n1)"
-URL_MELONDS="$(cat versions/$VERSION_URL_$ARCH.txt|head -n1)"
+THE_FILE="$VERSION""_URL_""$ARCH"".txt"
+URL_MELONDS="$(cat versions/"$THE_FILE"|head -n1)"
 URL_SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 
 echo "
