@@ -2,17 +2,34 @@
 
 set -eu
 
-ARCH=$(uname -m)
+# ARCH=$(uname -m)
+VERSION="$(cat version|head -n1)"
+URL_MELONDS="$(cat versions/$VERSION_URL.txt|head -n1)"
+URL_SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 
-echo "Installing package dependencies..."
-echo "---------------------------------------------------------------"
-# pacman -Syu --noconfirm PACKAGESHERE
+echo "
+[ Installing main dependencies... ]
+"
 
-echo "Installing debloated packages..."
-echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+apt update
+apt install -yy git wget zsync patchelf xvfb unzip binutils build-essential
 
-# Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
+wget "$URL_SHARUN"
+chmod +x quick-sharun.sh
 
-# If the application needs to be manually built that has to be done down here
+echo "
+[ Downloading and fetching dependencies for $VERSION ]
+"
+
+find versions|grep "$VERSION"
+
+bash versions/"$VERSION""_PKGS.sh"
+wget "$URL_MELONDS" -O "archive.zip"
+unzip "archive.zip" -d extracted
+
+find
+
+# This is how it should be structured
+#
+# ./extracted/main-binary
+# archive.zip

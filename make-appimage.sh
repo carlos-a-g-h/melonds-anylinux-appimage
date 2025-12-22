@@ -3,16 +3,20 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q PACKAGENAME | awk '{print $2; exit}') # example command to get version of application here
+VERSION="$(cat version|head -n1)"
+URL_ICON="https://github.com/melonDS-emu/melonDS/raw/refs/heads/master/res/melon.svg"
+
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=PATH_OR_URL_TO_ICON
-export DESKTOP=PATH_OR_URL_TO_DESKTOP_ENTRY
+export ICON="melonDS.svg"
+export DESKTOP="melonDS.desktop"
+
+wget "$URL_ICON" -O "$ICON"
 
 # Deploy dependencies
-quick-sharun /PATH/TO/BINARY_AND_LIBRARIES_HERE
+quick-sharun extracted/melonDS
 
 # Additional changes can be done in between here
 

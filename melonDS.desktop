@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=melonDS
+GenericName=Nintendo DS Emulator
+GenericName[es]=Emulador de Nintendo DS
+Comment=A fast and accurate Nintendo DS emulator
+Comment[es]=Emulador de Nintendo DS rápido y preciso
+Exec=melonDS %f
+Type=Application
+Categories=Game;Emulator;
+Terminal=false
+Icon=melonDS
+MimeType=application/x-nintendo-ds-rom;
+Keywords=emulator;nintendo;ds;nds;nintendo ds;
