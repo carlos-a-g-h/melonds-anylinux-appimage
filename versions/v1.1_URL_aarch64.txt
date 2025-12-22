@@ -1,1 +1,2 @@
-https://melonds.kuribo64.net/downloads/melonDS-1.1-ubuntu-aarch64.zip
+https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-ubuntu-aarch64.zip
+# https://melonds.kuribo64.net/downloads/melonDS-1.1-ubuntu-aarch64.zip
