@@ -2,9 +2,9 @@
 
 set -eu
 
-# ARCH=$(uname -m)
+ARCH=$(uname -m)
 VERSION="$(cat version|head -n1)"
-URL_MELONDS="$(cat versions/$VERSION_URL.txt|head -n1)"
+URL_MELONDS="$(cat versions/$VERSION_URL_$ARCH.txt|head -n1)"
 URL_SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 
 echo "
@@ -24,8 +24,8 @@ echo "
 find versions|grep "$VERSION"
 
 bash versions/"$VERSION""_PKGS.sh"
-wget "$URL_MELONDS" -O "archive.zip"
-unzip "archive.zip" -d extracted
+wget "$URL_MELONDS" -O archive.zip
+unzip archive.zip -d extracted
 
 find
 
