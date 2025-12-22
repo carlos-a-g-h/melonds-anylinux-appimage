@@ -37,7 +37,7 @@ export DEPLOY_GLYCIN=0
 wget "$URL_ICON" -O "$ICON"
 
 # Deploy dependencies
-./quick-sharun "$PATH_TO_BIN"
+./quick-sharun.sh "$PATH_TO_BIN"
 
 # Copy the config
 cp -va _config AppDir/
