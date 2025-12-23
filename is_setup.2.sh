@@ -254,8 +254,10 @@ then
 			BACKUP="$CONFIG_DIR".backup
 			if [ -e "$BACKUP" ]
 			then
+				echo "$MSG_NOT DELETING OLD BACKUP..."
 				rm -vrf "$BACKUP"
 			fi
+			echo "$MSG_NOT CREATING A BACKUP OF THE CURRENT CONFIG..."
 			mv -va "$CONFIG_DIR" "$CONFIG_DIR".backup
 		fi
 		mkdir -vp "$CONFIG_DIR"

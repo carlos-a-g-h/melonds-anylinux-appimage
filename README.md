@@ -12,7 +12,7 @@
 
 ### These AppImages VS the official ones
 
-The melonDS project build their own AppImages [and push them to their releases](https://github.com/melonDS-emu/melonDS/releases), however, these AppImages do not run on older systems, and that is why I made this repository, more details about this at the end of the README
+The melonDS project already build [their own AppImages](https://github.com/melonDS-emu/melonDS/releases), however, these AppImages do not run on older systems, and that is why I made this repository, more details about this at the end of the README
 
 <details>
   <summary><b><i>The official AppImage does not run on an older system</i></b></summary>
