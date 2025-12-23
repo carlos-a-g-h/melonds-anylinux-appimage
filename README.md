@@ -42,7 +42,6 @@ This AppImage has internal scripts and programs that can be launched by calling 
 
 |Program or script|Description|
 |-|-|
-|vbam|Run SDL port instead of the wxGTK port|
 | setup | An "installation" script for the appimage. It provides a nice config, a DESKTOP file in /usr/share/applications and an icon |
 | details | Extracts the "details" directory from the AppImage |
 
