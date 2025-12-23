@@ -1,4 +1,4 @@
-# melonDS Anylinux AppImages 🐧
+# melonDS AnyLinux AppImages 🐧
 
 ## Build status
 
