@@ -1,4 +1,4 @@
-# VisualBoyAdvance-M Anylinux AppImages 🐧
+# melonDS Anylinux AppImages 🐧
 
 ## Build status
 
