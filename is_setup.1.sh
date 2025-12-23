@@ -17,6 +17,6 @@ declare -a LBINARIES=(
 )
 
 function additional_config_tasks() {
-	# echo "run aditional stuff here"
+	echo "runing extra tasks on teh config..."
 	sed -i "s:HOME_DIRECTORY:$HOME:" "$CONFIG_DIR"/melonDS.ini
 }
