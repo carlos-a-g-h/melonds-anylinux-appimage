@@ -21,6 +21,15 @@ More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/
   </a>
 </details>
 
+
+<img width="1920" height="1080" alt="melonds-official-does-not-run" src="https://github.com/user-attachments/assets/62451cdb-1512-449f-aeb0-1b8342c34056" />
+
+
+<img width="1920" height="1080" alt="melonds-anylinux-runs" src="https://github.com/user-attachments/assets/bbb31370-cf34-459d-b6b8-35dc98e426f0" />
+
+
+
+
 ---
 
 # Fork this repository to quickly make an AppImage using the [Anylinux-AppImages](https://github.com/pkgforge-dev/Anylinux-AppImages) tools
