@@ -258,7 +258,7 @@ then
 				rm -vrf "$BACKUP"
 			fi
 			echo "$MSG_NOT CREATING A BACKUP OF THE CURRENT CONFIG..."
-			mv -va "$CONFIG_DIR" "$CONFIG_DIR".backup
+			mv -v "$CONFIG_DIR" "$CONFIG_DIR".backup
 		fi
 		mkdir -vp "$CONFIG_DIR"
 		cp -va "$APPDIR"/_config/* "$CONFIG_DIR"/

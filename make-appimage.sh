@@ -8,6 +8,7 @@ GH_SHA_SHORT="${GH_SHA:0:8}"
 ARCH=$(uname -m)
 VERSION="$(cat version|head -n1)"
 NAME="melonDS"
+APPIMAGE_STEM="$NAME"_"$VERSION"_"$GH_SHA_SHORT"_anylinux_"$ARCH"
 
 PATH_TO_BIN="./extracted/melonDS"
 
@@ -17,6 +18,7 @@ export ARCH VERSION
 export OUTPATH=./dist
 # export ADD_HOOKS="self-updater.bg.hook"
 # export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
+export OUTNAME="$APPIMAGE_STEM".AppImage
 export ICON="melonDS.svg"
 export DESKTOP="melonDS.desktop"
 export OUTPATH=./dist
