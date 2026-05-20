@@ -6,8 +6,6 @@
 
 [![CI Build Status](https://github.com//carlos-a-g-h/melonds-anylinux-appimage/actions/workflows/appimage.yml/badge.svg)](https://github.com/carlos-a-g-h/melonds-anylinux-appimage/releases/latest)
 
-* [Latest Stable Release](https://github.com/carlos-a-g-h/melonds-anylinux-appimage/releases/latest)
-
 ## About this AppImage
 
 ### These AppImages VS the official ones
