@@ -52,14 +52,12 @@ cp -va _config AppDir/
 
 # Copy details
 mkdir -vp AppDir/_details
-cat /etc/os-release > AppDir/_details/system.txt
 echo "$GH_SHA" > AppDir/_details/commit.txt
 echo "$(date)" > AppDir/_details/date.txt
+dpkg -l > AppDir/_details/system_packages.txt
+cat /etc/os-release > AppDir/_details/system_info.txt
 ldd "$PATH_TO_BIN" > AppDir/_details/ldd.output.txt
-dpkg -l > AppDir/_details/packages.txt
-
-cp -va versions/"$VERSION""_URL_""$ARCH"".txt" AppDir/_details/
-
+cat sources.txt|grep "$VERSION" > AppDir/_details/sources.txt
 echo "" > AppDir/_details/sha256sums.txt
 sha256sum ./extracted/melonDS >> AppDir/_details/sha256sums.txt
 sha256sum archive.zip >> AppDir/_details/sha256sums.txt
