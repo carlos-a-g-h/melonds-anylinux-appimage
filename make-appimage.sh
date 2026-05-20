@@ -5,14 +5,20 @@ set -eu
 GH_SHA="$1"
 GH_SHA_SHORT="${GH_SHA:0:8}"
 
+# System architecture
 ARCH=$(uname -m)
-VERSION="$(cat version|head -n1)"
+
+# [MelonDS] Select version
+VERSION="$(sed -n 1p sources.txt)"
+
+# Name and Stem
 NAME="melonDS"
 APPIMAGE_STEM="$NAME"_"$VERSION"_"$GH_SHA_SHORT"_anylinux_"$ARCH"
 
 PATH_TO_BIN="./extracted/melonDS"
 
-URL_ICON="https://github.com/melonDS-emu/melonDS/raw/refs/heads/master/res/melon.svg"
+# Icon
+URL_ICON=$(awk "/https/ && /melon.svg/" sources.txt)
 
 export ARCH VERSION
 export OUTPATH=./dist
@@ -65,6 +71,9 @@ cp -v is_setup.1.sh AppDir/bin/setup
 cat is_setup.2.sh >> AppDir/bin/setup
 chmod +x AppDir/bin/details
 chmod +x AppDir/bin/setup
+
+# Write name (stem)
+echo "$APPIMAGE_STEM" > AppDir/_details/name.txt
 
 # Turn AppDir into AppImage
 ./quick-sharun.sh --make-appimage
