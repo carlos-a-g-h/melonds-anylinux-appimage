@@ -1,33 +1,41 @@
 #!/bin/sh
 
-set -eu
+# TODO: FINISH THIS LATER, DO NOT TEST OR RUN
 
+set -eux
+
+# System architecture
 ARCH=$(uname -m)
-VERSION="$(cat version|head -n1)"
+
+# [MelonDS] Select version
+VERSION="$(sed -n 1p sources.txt)"
 THE_FILE="$VERSION""_URL_""$ARCH"".txt"
-URL_MELONDS="$(cat versions/"$THE_FILE"|head -n1)"
-URL_SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 
-echo "
-[ Installing main dependencies... ]
-"
+# [MelonDS] Upstream release
+URL_UPSTREAM=$(awk "/https/ && /github.com/ && /melonDS/ && /releases/ && /$VERSION/ && /$ARCH/" sources.txt)
 
+# [Anylinux] Quick sharun script
+URL_SHARUN=$(awk "/https/ && /quick-sharun.sh/" sources.txt)
+
+# Installing basic dependencies
 apt update
-apt install -yy git wget strace zsync patchelf xvfb unzip binutils build-essential
+apt install -yy git wget strace zsync patchelf xvfb unzip binutils build-essential squashfs-tools
 
+# Downloading Quick Sharun script
 wget "$URL_SHARUN"
 chmod +x quick-sharun.sh
 
-echo "
-[ Downloading and fetching dependencies for $VERSION ]
-"
-
-find versions|grep "$VERSION"
-
+# Installing extra dependencies based on the version
 bash versions/"$VERSION""_PKGS.sh"
-wget "$URL_MELONDS" -O archive.zip
+
+# Download the official release from upstream
+wget "$URL_UPSTREAM" -O archive.zip
 unzip archive.zip -d extracted
 
+# Print the contents of the current working directory
+echo "
+[ CONTENTS ]
+"
 find
 
 # This is how it should be structured
