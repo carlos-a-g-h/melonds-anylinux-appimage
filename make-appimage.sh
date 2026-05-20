@@ -13,7 +13,7 @@ VERSION="$(sed -n 1p sources.txt)"
 
 # Name and Stem
 NAME="melonDS"
-APPIMAGE_STEM="$NAME"_"$VERSION"_"$GH_SHA_SHORT"_anylinux_"$ARCH"
+APPIMAGE_STEM="$NAME"_v"$VERSION"_"$GH_SHA_SHORT"_anylinux_"$ARCH"
 
 PATH_TO_BIN="./extracted/melonDS"
 
