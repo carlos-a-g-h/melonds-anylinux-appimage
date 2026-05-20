@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# TODO: FINISH THIS LATER, DO NOT TEST OR RUN
-
 set -eux
 
 # System architecture
