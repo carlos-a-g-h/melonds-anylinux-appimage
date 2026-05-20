@@ -7,7 +7,6 @@ ARCH=$(uname -m)
 
 # [MelonDS] Select version
 VERSION="$(sed -n 1p sources.txt)"
-THE_FILE="$VERSION""_URL_""$ARCH"".txt"
 
 # [MelonDS] Upstream release
 URL_UPSTREAM=$(awk "/https/ && /github.com/ && /melonDS/ && /releases/ && /$VERSION/ && /$ARCH/" sources.txt)
