@@ -77,3 +77,6 @@ echo "$APPIMAGE_STEM" > AppDir/_details/name.txt
 
 # Turn AppDir into AppImage
 ./quick-sharun.sh --make-appimage
+
+# Turn AppDir into SQUASHFS
+mksquashfs AppDir "$APPIMAGE_STEM".AppImage.squashfs -comp xz
